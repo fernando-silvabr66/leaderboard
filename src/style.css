@@ -9,7 +9,6 @@ body {
   margin-top: 10vh;
   border: 1px solid black;
   padding: 15px;
-  /* justify-content: center; */
 }
 
 .header-section h1 {
@@ -21,8 +20,6 @@ body {
   border-bottom: 1px solid black;
 }
 
-
-
 .main-list-section {
   padding-top: 2vh;
   display: flex;
@@ -32,16 +29,11 @@ body {
 
 .list-section {
   flex: 1;
-  /* order: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around; */
 }
 
 .add-section {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   flex: 1;
 }
 
@@ -74,9 +66,6 @@ body {
   background: none;
   outline: none;
   border: 2px solid #222;
-  /* box-shadow: 1.1rem 1rem 1rem #333;
-  transform: scale(1.1);
-  transition: 0.4s; */
 }
 
 .add-btn:focus,
@@ -102,7 +91,6 @@ input {
   outline: none;
   border: 1px solid #333;
   border-radius: 5px;
-  /* width: 70vw; */
 }
 
 .list-section-title {
@@ -116,7 +104,6 @@ input {
   flex-direction: row;
   justify-content: space-between;
   padding-left: 1vw;
-  /* margin-left: 0; */
   padding-right: 1vw;
   padding-top: 2vh;
   padding-bottom: 2vh;
@@ -134,8 +121,7 @@ input {
   }
 
   .main-list-section {
-    padding-top: 2vh;   
+    padding-top: 2vh;
     flex-direction: column;
   }
-  
 }
