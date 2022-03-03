@@ -1,6 +1,141 @@
 body {
-  background-color: bisque;
-  background-image: url('./assets/webpack.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
+  margin: 0;
+  padding: 1vw;
+  font-family: sans-serif;
+  height: 100vh;
+}
+
+.container {
+  margin-top: 10vh;
+  border: 1px solid black;
+  padding: 15px;
+  /* justify-content: center; */
+}
+
+.header-section h1 {
+  text-align: left;
+  font-size: 2rem;
+}
+
+.header-section {
+  border-bottom: 1px solid black;
+}
+
+
+
+.main-list-section {
+  padding-top: 2vh;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.list-section {
+  flex: 1;
+  /* order: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; */
+}
+
+.add-section {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  flex: 1;
+}
+
+.hrbar {
+  width: 30vw;
+  margin-top: 5vh;
+}
+
+.title {
+  width: 60vw;
+  height: 25px;
+}
+
+.grey-background {
+  background-color: #ddd;
+}
+
+.validate-error {
+  display: none;
+  color: red;
+}
+
+.add-btn {
+  width: 10rem;
+  padding: 0.5rem 0;
+  align-self: flex-end;
+  font-family: inherit;
+  cursor: pointer;
+  font-size: 1.1rem;
+  background: none;
+  outline: none;
+  border: 2px solid #222;
+  /* box-shadow: 1.1rem 1rem 1rem #333;
+  transform: scale(1.1);
+  transition: 0.4s; */
+}
+
+.add-btn:focus,
+.add-btn:hover {
+  transform: scale(1);
+  background-color: #333;
+  color: #fff;
+}
+
+#refresh-btn {
+  float: right;
+  margin-right: 5vw;
+  height: 5vh;
+  align-self: center;
+}
+
+input {
+  display: flex;
+  height: 1rem;
+  padding: 1rem;
+  font-family: inherit;
+  font-size: 2rem;
+  outline: none;
+  border: 1px solid #333;
+  border-radius: 5px;
+  /* width: 70vw; */
+}
+
+.list-section-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.elements {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 1vw;
+  /* margin-left: 0; */
+  padding-right: 1vw;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .title,
+  .elements {
+    width: 10vw;
+  }
+
+  body {
+    padding: 0 5vw;
+  }
+
+  .main-list-section {
+    padding-top: 2vh;   
+    flex-direction: column;
+  }
+  
 }
