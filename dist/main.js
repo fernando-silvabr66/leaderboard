@@ -10,53 +10,13 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./modules/addscore.js":
-/*!*****************************!*\
-  !*** ./modules/addscore.js ***!
-  \*****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _leaders_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./leaders.js */ \"./modules/leaders.js\");\n\r\n\r\nconst addLeader = (name, score) => {\r\n  const elemArray = { user: name, score };\r\n  (0,_leaders_js__WEBPACK_IMPORTED_MODULE_0__.postData)(elemArray);\r\n  (0,_leaders_js__WEBPACK_IMPORTED_MODULE_0__.getAPIData)();\r\n  document.querySelector('.name').value = '';\r\n  document.querySelector('.score').value = '';\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (addLeader);\n\n//# sourceURL=webpack://webpacktemplate/./modules/addscore.js?");
-
-/***/ }),
-
-/***/ "./modules/form.js":
-/*!*************************!*\
-  !*** ./modules/form.js ***!
-  \*************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _addscore_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./addscore.js */ \"./modules/addscore.js\");\n\r\n\r\nconst formData = (e) => {\r\n  e.preventDefault();\r\n\r\n  const name = document.querySelector('.name').value;\r\n  const score = document.querySelector('.score').value;\r\n  if (name !== '' && score !== '') {\r\n    document.querySelector('.validate-error').style.display = 'none';\r\n    (0,_addscore_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(name, score);\r\n  } else {\r\n    document.querySelector('.validate-error').style.display = 'block';\r\n  }\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (formData);\n\n//# sourceURL=webpack://webpacktemplate/./modules/form.js?");
-
-/***/ }),
-
-/***/ "./modules/generatelist.js":
-/*!*********************************!*\
-  !*** ./modules/generatelist.js ***!
-  \*********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst getData = (data) => {\r\n  const buildContainer = document.getElementById('leaders-list');\r\n  buildContainer.innerHTML = '';\r\n  if (data != null) {\r\n    data.result.forEach((element, index) => {\r\n      const li = document.createElement('li');\r\n      li.className = 'elements';\r\n      const lineScore = document.createElement('div');\r\n      lineScore.className = 'leader-score';\r\n      lineScore.textContent = `${element.user} - ${element.score}`;\r\n      li.appendChild(lineScore);\r\n      buildContainer.append(li);\r\n      if (index % 2 !== 0) {\r\n        li.classList.add('grey-background');\r\n      }\r\n    });\r\n  }\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getData);\n\n//# sourceURL=webpack://webpacktemplate/./modules/generatelist.js?");
-
-/***/ }),
-
-/***/ "./modules/leaders.js":
-/*!****************************!*\
-  !*** ./modules/leaders.js ***!
-  \****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getAPIData\": () => (/* binding */ getAPIData),\n/* harmony export */   \"postData\": () => (/* binding */ postData)\n/* harmony export */ });\n/* harmony import */ var _generatelist_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./generatelist.js */ \"./modules/generatelist.js\");\n\r\n\r\nconst dataURL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/6uj0uqnZpshKtXlAZwzJ/scores';\r\n\r\nconst getAPIData = async () => {\r\n  const response = await (await fetch(dataURL)).json();\r\n  (0,_generatelist_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(response);\r\n};\r\nconst postData = async (data) => {\r\n  await fetch(dataURL, {\r\n    method: 'POST',\r\n    body: JSON.stringify(data),\r\n    headers: {\r\n      'Content-type': 'application/json; charset=UTF-8',\r\n    },\r\n  });\r\n};\r\n\r\n\n\n//# sourceURL=webpack://webpacktemplate/./modules/leaders.js?");
-
-/***/ }),
-
 /***/ "./node_modules/css-loader/dist/cjs.js!./src/style.css":
 /*!*************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./src/style.css ***!
   \*************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n// Imports\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"body {\\r\\n  margin: 0;\\r\\n  padding: 1vw;\\r\\n  font-family: sans-serif;\\r\\n  height: 100vh;\\r\\n}\\r\\n\\r\\n.container {\\r\\n  margin-top: 10vh;\\r\\n  border: 1px solid black;\\r\\n  padding: 15px;\\r\\n}\\r\\n\\r\\n.header-section h1 {\\r\\n  text-align: left;\\r\\n  font-size: 2rem;\\r\\n}\\r\\n\\r\\n.header-section {\\r\\n  border-bottom: 1px solid black;\\r\\n}\\r\\n\\r\\n.main-list-section {\\r\\n  padding-top: 2vh;\\r\\n  display: flex;\\r\\n  flex-direction: row;\\r\\n  gap: 20px;\\r\\n}\\r\\n\\r\\n.list-section {\\r\\n  flex: 1;\\r\\n}\\r\\n\\r\\n.add-section {\\r\\n  display: flex;\\r\\n  flex-direction: column;\\r\\n  flex: 1;\\r\\n}\\r\\n\\r\\n.hrbar {\\r\\n  width: 30vw;\\r\\n  margin-top: 5vh;\\r\\n}\\r\\n\\r\\n.title {\\r\\n  width: 60vw;\\r\\n  height: 25px;\\r\\n}\\r\\n\\r\\n.grey-background {\\r\\n  background-color: #ddd;\\r\\n}\\r\\n\\r\\n.validate-error {\\r\\n  display: none;\\r\\n  color: red;\\r\\n}\\r\\n\\r\\n.add-btn {\\r\\n  width: 10rem;\\r\\n  padding: 0.5rem 0;\\r\\n  align-self: flex-end;\\r\\n  font-family: inherit;\\r\\n  cursor: pointer;\\r\\n  font-size: 1.1rem;\\r\\n  background: none;\\r\\n  outline: none;\\r\\n  border: 2px solid #222;\\r\\n}\\r\\n\\r\\n.add-btn:focus,\\r\\n.add-btn:hover {\\r\\n  transform: scale(1);\\r\\n  background-color: #333;\\r\\n  color: #fff;\\r\\n}\\r\\n\\r\\n#list-refresh-btn {\\r\\n  float: right;\\r\\n  margin-right: 5vw;\\r\\n  height: 5vh;\\r\\n  align-self: center;\\r\\n}\\r\\n\\r\\ninput {\\r\\n  display: flex;\\r\\n  height: 1rem;\\r\\n  padding: 1rem;\\r\\n  font-family: inherit;\\r\\n  font-size: 2rem;\\r\\n  outline: none;\\r\\n  border: 1px solid #333;\\r\\n  border-radius: 5px;\\r\\n}\\r\\n\\r\\n.list-section-title {\\r\\n  display: flex;\\r\\n  flex-direction: row;\\r\\n  justify-content: space-between;\\r\\n}\\r\\n\\r\\n.elements {\\r\\n  display: flex;\\r\\n  flex-direction: row;\\r\\n  justify-content: space-between;\\r\\n  padding-left: 1vw;\\r\\n  padding-right: 1vw;\\r\\n  padding-top: 2vh;\\r\\n  padding-bottom: 2vh;\\r\\n  align-items: center;\\r\\n}\\r\\n\\r\\n@media screen and (max-width: 768px) {\\r\\n  .title,\\r\\n  .elements {\\r\\n    width: 10vw;\\r\\n  }\\r\\n\\r\\n  body {\\r\\n    padding: 0 5vw;\\r\\n  }\\r\\n\\r\\n  .main-list-section {\\r\\n    padding-top: 2vh;\\r\\n    flex-direction: column;\\r\\n  }\\r\\n}\\r\\n\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://webpacktemplate/./src/style.css?./node_modules/css-loader/dist/cjs.js");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n// Imports\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"body {\\r\\n  margin: 0;\\r\\n  padding: 1vw;\\r\\n  font-family: sans-serif;\\r\\n  height: 100vh;\\r\\n}\\r\\n\\r\\n.container {\\r\\n  margin-top: 10vh;\\r\\n  border: 1px solid black;\\r\\n  border-radius: 5px;\\r\\n  padding: 15px;\\r\\n}\\r\\n\\r\\n.header-section h1 {\\r\\n  text-align: left;\\r\\n  font-size: 2rem;\\r\\n}\\r\\n\\r\\n.header-section {\\r\\n  border-bottom: 1px solid black;\\r\\n}\\r\\n\\r\\n.main-list-section {\\r\\n  padding-top: 2vh;\\r\\n  display: flex;\\r\\n  flex-direction: row;\\r\\n  gap: 20px;  \\r\\n}\\r\\n\\r\\n.list-section {\\r\\n  flex: 1;\\r\\n  border: 1px solid #333;\\r\\n  border-radius: 5px;\\r\\n}\\r\\n\\r\\n.list-section h2 {\\r\\n  padding: 5px;\\r\\n}\\r\\n\\r\\n#leaders-list {\\r\\n  padding: 5px;\\r\\n}\\r\\n\\r\\n\\r\\n.add-section {\\r\\n  display: flex;\\r\\n  flex-direction: column;\\r\\n  flex: 1;\\r\\n}\\r\\n\\r\\n.hrbar {\\r\\n  width: 30vw;\\r\\n  /* margin-top: 5vh; */\\r\\n  margin-bottom: 5vh;\\r\\n}\\r\\n\\r\\n.title {\\r\\n  width: 60vw;\\r\\n  height: 25px;\\r\\n}\\r\\n\\r\\n.grey-background {\\r\\n  background-color: #ddd;\\r\\n}\\r\\n\\r\\n.validate-error {\\r\\n  display: none;\\r\\n  color: red;\\r\\n}\\r\\n\\r\\n.add-btn {\\r\\n  width: 10rem;\\r\\n  padding: 0.5rem 0;\\r\\n  align-self: flex-end;\\r\\n  font-family: inherit;\\r\\n  cursor: pointer;\\r\\n  font-size: 1.1rem;\\r\\n  background: none;\\r\\n  outline: none;\\r\\n  border: 2px solid #222;\\r\\n  box-shadow: 5px 5px #888888;\\r\\n}\\r\\n\\r\\n.add-btn:focus,\\r\\n.add-btn:hover {\\r\\n  transform: scale(1);\\r\\n  background-color: #333;\\r\\n  color: #fff;\\r\\n}\\r\\n\\r\\n.list-section-title {\\r\\n  display: flex;\\r\\n  flex-direction: row;\\r\\n  justify-content: space-between;\\r\\n  align-items: center;\\r\\n}\\r\\n\\r\\n#list-refresh-btn {\\r\\n  float: right;\\r\\n  margin-right: 5vw;\\r\\n  height: 5vh;\\r\\n  border: 2px solid #222;\\r\\n  box-shadow: 5px 5px #888888;\\r\\n}\\r\\n\\r\\ninput {\\r\\n  display: flex;\\r\\n  height: 1rem;\\r\\n  padding: 1rem;\\r\\n  font-family: inherit;\\r\\n  font-size: 2rem;\\r\\n  outline: none;\\r\\n  border: 1px solid #333;\\r\\n  border-radius: 5px;\\r\\n}\\r\\n\\r\\n.elements {\\r\\n  display: flex;\\r\\n  flex-direction: row;\\r\\n  justify-content: space-between;\\r\\n  padding-left: 1vw;\\r\\n  padding-right: 1vw;\\r\\n  padding-top: 2vh;\\r\\n  padding-bottom: 2vh;\\r\\n  align-items: center;\\r\\n}\\r\\n\\r\\n@media screen and (max-width: 768px) {\\r\\n  \\r\\n  body {\\r\\n    padding: 0 5vw;\\r\\n  }\\r\\n\\r\\n  .main-list-section {\\r\\n    padding-top: 2vh;\\r\\n    flex-direction: column;\\r\\n  }\\r\\n}\\r\\n\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://webpacktemplate/./src/style.css?./node_modules/css-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -156,7 +116,47 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_leaders_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../modules/leaders.js */ \"./modules/leaders.js\");\n/* harmony import */ var _modules_form_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/form.js */ \"./modules/form.js\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\r\n\r\n\r\n\r\ndocument.querySelector('.add-btn').addEventListener('click', _modules_form_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"]);\r\n(0,_modules_leaders_js__WEBPACK_IMPORTED_MODULE_0__.getAPIData)();\r\ndocument.querySelector('#list-refresh-btn').addEventListener('click', _modules_leaders_js__WEBPACK_IMPORTED_MODULE_0__.getAPIData);\n\n//# sourceURL=webpack://webpacktemplate/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_leaders_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/leaders.js */ \"./src/modules/leaders.js\");\n/* harmony import */ var _modules_form_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/form.js */ \"./src/modules/form.js\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\r\n\r\n\r\n\r\ndocument.querySelector('.add-btn').addEventListener('click', _modules_form_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"]);\r\n(0,_modules_leaders_js__WEBPACK_IMPORTED_MODULE_0__.getAPIData)();\r\ndocument.querySelector('#list-refresh-btn').addEventListener('click', _modules_leaders_js__WEBPACK_IMPORTED_MODULE_0__.getAPIData);\n\n//# sourceURL=webpack://webpacktemplate/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/addscore.js":
+/*!*********************************!*\
+  !*** ./src/modules/addscore.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _leaders_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./leaders.js */ \"./src/modules/leaders.js\");\n\r\n\r\nconst addLeader = (name, score) => {\r\n  const elemArray = { user: name, score };\r\n  (0,_leaders_js__WEBPACK_IMPORTED_MODULE_0__.postData)(elemArray);\r\n  (0,_leaders_js__WEBPACK_IMPORTED_MODULE_0__.getAPIData)();\r\n  document.querySelector('.name').value = '';\r\n  document.querySelector('.score').value = '';\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (addLeader);\n\n//# sourceURL=webpack://webpacktemplate/./src/modules/addscore.js?");
+
+/***/ }),
+
+/***/ "./src/modules/form.js":
+/*!*****************************!*\
+  !*** ./src/modules/form.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _addscore_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./addscore.js */ \"./src/modules/addscore.js\");\n\r\n\r\nconst formData = (e) => {\r\n  e.preventDefault();\r\n\r\n  const name = document.querySelector('.name').value;\r\n  const score = document.querySelector('.score').value;\r\n  if (name !== '' && score !== '') {\r\n    document.querySelector('.validate-error').style.display = 'none';\r\n    (0,_addscore_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(name, score);\r\n  } else {\r\n    document.querySelector('.validate-error').style.display = 'block';\r\n  }\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (formData);\n\n//# sourceURL=webpack://webpacktemplate/./src/modules/form.js?");
+
+/***/ }),
+
+/***/ "./src/modules/generatelist.js":
+/*!*************************************!*\
+  !*** ./src/modules/generatelist.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst getData = (data) => {\r\n  const buildContainer = document.getElementById('leaders-list');\r\n  buildContainer.innerHTML = '';\r\n  if (data != null) {\r\n    data.result.forEach((element, index) => {\r\n      const li = document.createElement('li');\r\n      li.className = 'elements';\r\n      const lineScore = document.createElement('div');\r\n      lineScore.className = 'leader-score';\r\n      lineScore.textContent = `${element.user} - ${element.score}`;\r\n      li.appendChild(lineScore);\r\n      buildContainer.append(li);\r\n      if (index % 2 !== 0) {\r\n        li.classList.add('grey-background');\r\n      }\r\n    });\r\n  }\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getData);\n\n//# sourceURL=webpack://webpacktemplate/./src/modules/generatelist.js?");
+
+/***/ }),
+
+/***/ "./src/modules/leaders.js":
+/*!********************************!*\
+  !*** ./src/modules/leaders.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getAPIData\": () => (/* binding */ getAPIData),\n/* harmony export */   \"postData\": () => (/* binding */ postData)\n/* harmony export */ });\n/* harmony import */ var _generatelist_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./generatelist.js */ \"./src/modules/generatelist.js\");\n\r\n\r\nconst dataURL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/6uj0uqnZpshKtXlAZwzJ/scores';\r\n\r\nconst getAPIData = async () => {\r\n  const response = await (await fetch(dataURL)).json();\r\n  (0,_generatelist_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(response);\r\n};\r\n\r\nconst postData = async (data) => {\r\n  await fetch(dataURL, {\r\n    method: 'POST',\r\n    body: JSON.stringify(data),\r\n    headers: {\r\n      'Content-type': 'application/json; charset=UTF-8',\r\n    },\r\n  });\r\n};\r\n\r\n\n\n//# sourceURL=webpack://webpacktemplate/./src/modules/leaders.js?");
 
 /***/ })
 
