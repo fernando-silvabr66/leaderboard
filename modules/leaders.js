@@ -6,6 +6,7 @@ const getAPIData = async () => {
   const response = await (await fetch(dataURL)).json();
   getData(response);
 };
+
 const postData = async (data) => {
   await fetch(dataURL, {
     method: 'POST',
