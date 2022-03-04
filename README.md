@@ -12,7 +12,7 @@ Leaderboard list app
 
 ## Images
 
-![screenshot](./app-screenshot.jpg)
+![screenshot](./app-screenshot.JPG)
 
 ## Built With
 
@@ -41,7 +41,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Github page for this project
 
-- 
+- https://fernando-silvabr66.github.io/leaderboard/dist
 
 ## Authors
 
