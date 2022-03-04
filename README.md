@@ -12,7 +12,7 @@ Leaderboard list app
 
 ## Images
 
-![screenshot](./app-screenshot.jpg)
+![screenshot](./app-screenshot.JPG)
 
 ## Built With
 
